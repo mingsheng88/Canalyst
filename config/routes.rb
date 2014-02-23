@@ -1,8 +1,20 @@
 Canalyst::Application.routes.draw do
   
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'home#index'
-  get "home/index"
+
+  resources :home
+  resources :authentications
+
+  get '/auth/:provider/callback' => 'authentications#create'
+
+
+
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,11 @@
+%h3 You can also sign in via:
+
+%div.social-media-login 
+  %a{:href => user_omniauth_authorize_path(:twitter)} 
+    %img{:src => "/assets/twitter_32.png", :alt => ""}/ 
+  %a{:href => user_omniauth_authorize_path(:facebook)} 
+    %img{:src => "/assets/facebook_32.png", :alt => ""}/ 
+  %a{:href => user_omniauth_authorize_path(:google)} 
+    %img{:src => "/assets/google_32.png", :alt => ""}/ 
+  %a{:href => user_omniauth_authorize_path(:linkedin)} 
+    %img{:src => "/assets/linkedin_32.png", :alt => ""}/ 

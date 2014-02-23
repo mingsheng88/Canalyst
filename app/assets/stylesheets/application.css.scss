@@ -12,3 +12,9 @@
  *= require bootstrap
  *= require_tree .
  */
+
+.social-media-login {
+  a:hover {
+    text-decoration: none;
+  }
+}

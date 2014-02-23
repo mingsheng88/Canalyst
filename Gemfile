@@ -40,6 +40,11 @@ end
 gem 'devise'
 gem 'koala'
 gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-linkedin-oauth2'
+gem 'certified'
 
 # Use unicorn as the app server
 # gem 'unicorn'

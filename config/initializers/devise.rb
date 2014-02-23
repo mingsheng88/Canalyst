@@ -11,7 +11,6 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   config.mailer_sender = 'admin@canalyst.sg'
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -21,6 +20,10 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
+  require 'omniauth-facebook'
+  require 'omniauth-google-oauth2'
+  require 'omniauth-twitter'
+  require 'omniauth-linkedin-oauth2'
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -229,6 +232,10 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
+  config.omniauth :facebook, '392899850846905', 'fa15f4478d1a6919f8aef9601048e754', {scope: 'email'}
+  config.omniauth :twitter, 'VYk8WMAUh0yuADqRoX77bg', '4GUhvEMClYIsvWS2qTNjnxb7EbVvg7EPrcq7SMP7e0'
+  config.omniauth :google_oauth2, '286441494900.apps.googleusercontent.com', 'jL5u35U2FEe1jNcvh8jkhV9s', {scope: 'email'}
+  config.omniauth :linkedin, '75fj4envb5nc4f', '8FGbvFpF5rnLwbc4', {scope: 'r_basicprofile r_emailaddress'}
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
